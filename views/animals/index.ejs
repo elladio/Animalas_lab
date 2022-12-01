@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head.ejs") %>
+    <!-- <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/ad.css" />
+    <link rel="stylesheet" href="footer.css" /> -->
+  </head>
+  <body>
+    <section class="headerAd">
+      <%- include("../partials/header.ejs") %> 
+    </section>
+    <main>
+      <div class="mainTitle">
+        <h2>The zoo so far</h2>
+      </div>
+      <!-- ---------------------------------------- -->
+      <div class="animalList">
+        <div class="speciesHeader">
+          <div class="speciesBox"></div>
+          <h3>Species</h3>
+        </div>
+        <% for (animal of animals){ %>
+        <article class="animalItems">
+          <a class="animalLink" href="/animals/<%=animal._id %>">
+            <h4>
+              <%= animal.species %> - <%=animal.extinct ? "Extinct" : "Alive" %>
+            </h4>
+          </a>
+        </article>
+        <% } %>
+      </div>
+      <!-- ---------------------------------------- -->
+      <article class="animalExtras">
+        <img
+          src="https://store-images.s-microsoft.com/image/apps.15530.14084512162357210.0d6eea09-167f-4aad-97d7-d4d17f848799.9a461717-eb83-4a42-875e-7c96139197b1?q=90&w=480&h=270"
+        />
+        <article class="articleText">
+          <h4>
+            Please feel free to add to the zoo!
+          </h4>
+        </article>
+      </article>
+      <!-- ---------------------------------------- -->
+    </main>
+  </body>
+</html>
